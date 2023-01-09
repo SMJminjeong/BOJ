@@ -1,23 +1,18 @@
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
  
 public class Main {
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		HashSet<Integer> hs = new HashSet<Integer>();
  
-        boolean[] arr = new boolean[42];
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
-        for(int i = 0 ; i < 10 ; i++) {
-            arr[Integer.parseInt(br.readLine()) % 42] = true;
-        }
-        
-        int count = 0;
-        for(boolean value : arr) {
-            if(value){  
-                count++;
-            }
-        }
-        System.out.println(count);
-    }
+		for (int i = 0; i < 10; i++) {
+			hs.add(Integer.parseInt(br.readLine()) % 42);
+		}
+		br.close();
+		System.out.print(hs.size());
+	}
 }
