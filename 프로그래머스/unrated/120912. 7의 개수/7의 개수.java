@@ -3,19 +3,12 @@ class Solution {
     public int solution(int[] array) {
 
         int answer = 0;
-        int count = 0;
-        for(int i = 0; i<array.length; i++){
-            String target = Integer.toString(array[i]);
-            char[] charArray = target.toCharArray();
-
-            for(char ch : charArray){
-                if(ch == '7'){
-                    count++;
-                }
+        for(int i : array){
+            while(i>0){
+                if(i%10 == 7) answer++;
+                i/=10;
             }
-            
-        }
-        answer = count;
+        }        
 
         return answer;
 
