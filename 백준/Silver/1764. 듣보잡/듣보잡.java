@@ -17,7 +17,7 @@ public class Main {
         }
 
         ArrayList<String> interSectionArr = new ArrayList<>();
-        for(int i = N; i < N+M; i++) {
+        for(int i = 0; i < M; i++) {
             String name = br.readLine();
             if(unHeardSet.contains(name)) {
                 interSectionArr.add(name);
